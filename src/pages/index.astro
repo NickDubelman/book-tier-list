@@ -1,0 +1,62 @@
+---
+import TierRow from "../components/TierRow.astro";
+import { getTierRows } from "../lib/books";
+import "../styles/global.css";
+
+const tierRows = getTierRows();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="A mobile-friendly book tier list scored from 5 to 0.5"
+    />
+    <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bitter:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Nick's Book Rankings</title>
+  </head>
+
+  <body>
+    <main class="page-shell">
+      <header class="hero">
+        <h1>Nick's Book Rankings</h1>
+        <p class="hero-subtitle">
+          Started keeping track in 2025. I read all of these as audiobooks.
+        </p>
+      </header>
+
+      <section class="tier-list" aria-label="Book tiers from highest to lowest">
+        {
+          tierRows.map((row) => (
+            <TierRow
+              rowKey={row.key}
+              label={row.label}
+              caption={row.caption}
+              color={row.color}
+              books={row.books}
+            />
+          ))
+        }
+      </section>
+    </main>
+
+    <script>
+      import { setupTooltipController } from "../components/TooltipController.ts";
+
+      setupTooltipController();
+    </script>
+  </body>
+</html>

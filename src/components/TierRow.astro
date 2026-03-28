@@ -1,0 +1,46 @@
+---
+import BookCard from "./BookCard.astro";
+import type { Book } from "../lib/books";
+
+interface Props {
+  rowKey: string;
+  label: string;
+  caption: string;
+  color: string;
+  books: Book[];
+}
+
+const { rowKey, label, caption, color, books } = Astro.props;
+const isNamedLabel = Number.isNaN(Number(label));
+const tooltipPrefix = rowKey.replace(/[^a-zA-Z0-9-_]/g, "-");
+---
+
+<section
+  class:list={["tier-row", { "tier-row--named": isNamedLabel }]}
+  style={`--tier-color: ${color};`}
+  aria-label={`Tier ${label}`}
+>
+  <div class="tier-label">
+    <span class:list={["rank-value", { "rank-value--named": isNamedLabel }]}
+      >{label}</span
+    >
+    <span class="rank-caption">{caption}</span>
+  </div>
+
+  {
+    books.length > 0 ? (
+      <ul class="tier-books" role="list">
+        {books.map((book, index) => (
+          <li>
+            <BookCard
+              book={book}
+              tooltipId={`tooltip-${tooltipPrefix}-${index}`}
+            />
+          </li>
+        ))}
+      </ul>
+    ) : (
+      <p class="tier-empty">--</p>
+    )
+  }
+</section>

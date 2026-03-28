@@ -1,0 +1,81 @@
+ranks:
+  "5":
+    - title: Project Hail Mary
+      author: Andy Weir
+      image: https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg
+  "4.5":
+    - title: The Tainted Cup
+      author: Robert Jackson Bennett
+      image: https://covers.openlibrary.org/b/id/14578473-L.jpg
+    - title: A Drop of Corruption
+      author: Robert Jackson Bennett
+      image: https://covers.openlibrary.org/b/id/14870214-L.jpg
+    - title: The Will of the Many
+      author: James Islington
+      image: https://covers.openlibrary.org/b/olid/OL46617015M-L.jpg
+  "4":
+    - title: Red Rising
+      author: Pierce Brown
+      image: https://covers.openlibrary.org/b/olid/OL26758016M-L.jpg
+    - title: Golden Son
+      author: Pierce Brown
+      image: https://covers.openlibrary.org/b/id/8454351-L.jpg
+
+  "3.5":
+    - title: The Strength of the Few
+      author: James Islington
+      image: https://covers.openlibrary.org/b/id/15150800-L.jpg
+    - title: Morning Star
+      author: Pierce Brown
+      image: https://covers.openlibrary.org/b/id/8566174-L.jpg
+  "3":
+  "2.5":
+
+  "2":
+    - title: The Lightning Thief
+      author: Rick Riordan
+      image: https://covers.openlibrary.org/b/olid/OL42476783M-L.jpg
+
+  "1.5":
+
+  "1":
+
+  "0.5":
+
+want_to_read:
+  - title: Iron Gold
+    author: Pierce Brown
+    image: https://covers.openlibrary.org/b/olid/OL26940101M-L.jpg
+  - title: Dark Age
+    author: Pierce Brown
+    image: https://covers.openlibrary.org/b/id/8748017-L.jpg
+  - title: Light Bringer
+    author: Pierce Brown
+    image: https://covers.openlibrary.org/b/id/15157697-L.jpg
+  - title: The Martian
+    author: Andy Weir
+    image: https://covers.openlibrary.org/b/olid/OL32815550M-L.jpg
+  - title: Dungeon Crawler Carl
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/id/15143022-L.jpg
+  - title: Carl's Doomsday Scenario
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/id/11702962-L.jpg
+  - title: The Dungeon Anarchist's Cookbook
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/olid/OL52237752M-L.jpg
+  - title: The Gate of the Feral Gods
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/olid/OL33026536M-L.jpg
+  - title: The Butcher's Masquerade
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/olid/OL57519404M-L.jpg
+  - title: The Eye of the Bedlam Bride
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/olid/OL57538307M-L.jpg
+  - title: This Inevitable Ruin
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/olid/OL56917601M-L.jpg
+  - title: A Parade of Horribles
+    author: Matt Dinniman
+    image: https://covers.openlibrary.org/b/olid/OL60594148M-L.jpg

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Book tier list favicon">
+  <rect x="5" y="9" width="11" height="46" rx="2.8" fill="#148a32" />
+  <rect x="19" y="9" width="11" height="46" rx="2.8" fill="#f3c623" />
+  <rect x="33" y="9" width="11" height="46" rx="2.8" fill="#db3a34" />
+  <rect x="47" y="9" width="11" height="46" rx="2.8" fill="#3b82f6" />
+
+  <rect x="8" y="13" width="5" height="1.8" rx="0.9" fill="#ffffffd9" />
+  <rect x="22" y="13" width="5" height="1.8" rx="0.9" fill="#ffffffd9" />
+  <rect x="36" y="13" width="5" height="1.8" rx="0.9" fill="#ffffffd9" />
+  <rect x="50" y="13" width="5" height="1.8" rx="0.9" fill="#ffffffd9" />
+</svg>

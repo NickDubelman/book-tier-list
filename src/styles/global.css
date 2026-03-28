@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+:root {
+  --bg-a: #f6f0e4;
+  --bg-b: #f5f9e8;
+  --ink: #1d2224;
+  --muted: #536063;
+  --panel: rgba(255, 255, 255, 0.8);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  color: var(--ink);
+  font-family: "Archivo", "Segoe UI", Tahoma, sans-serif;
+  background:
+    radial-gradient(circle at 8% 10%, #ffffffc7 0, #ffffff00 40%),
+    radial-gradient(circle at 85% 15%, #d0f4d4a8 0, #d0f4d400 45%),
+    linear-gradient(155deg, var(--bg-a), var(--bg-b));
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+.page-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 1.4rem 0.9rem 2.5rem;
+}
+
+.hero {
+  border: 1px solid #00000012;
+  border-radius: 1.1rem;
+  background: var(--panel);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 14px 24px #0000000f;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  animation: rise-in 520ms ease-out both;
+}
+
+.hero h1 {
+  font-family: "Bitter", Georgia, serif;
+  line-height: 1.1;
+  font-size: clamp(1.7rem, 5vw, 2.9rem);
+}
+
+.hero-subtitle {
+  margin-top: 0.45rem;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.tier-list {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.tier-row {
+  --row-shadow: color-mix(in oklab, var(--tier-color), black 72%);
+  display: grid;
+  grid-template-columns: 3.8rem 1fr;
+  align-items: stretch;
+  border: 1px solid color-mix(in oklab, var(--tier-color), white 70%);
+  border-radius: 1rem;
+  background: color-mix(in oklab, var(--tier-color), white 82%);
+  box-shadow: 0 12px 26px
+    color-mix(in oklab, var(--row-shadow), transparent 86%);
+  overflow: visible;
+  animation: rise-in 460ms ease-out both;
+}
+
+.tier-row--named {
+  grid-template-columns: 6.4rem 1fr;
+}
+
+.tier-label {
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, var(--tier-color), white 10%),
+    var(--tier-color)
+  );
+  color: #ffffff;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 0.08rem;
+  border-right: 1px solid #ffffff45;
+  padding: 0.35rem;
+}
+
+.rank-value {
+  font-family: "Bitter", Georgia, serif;
+  font-size: 1.18rem;
+  line-height: 1;
+}
+
+.rank-value--named {
+  font-family: "Archivo", "Segoe UI", Tahoma, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.rank-caption {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  font-size: 0.55rem;
+  opacity: 0.9;
+}
+
+.tier-books {
+  margin: 0;
+  padding: 0.55rem;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.52rem;
+}
+
+.tier-empty {
+  margin: 0;
+  color: #455256;
+  font-size: 0.87rem;
+  padding: 0.8rem;
+}
+
+.book-card {
+  position: relative;
+  width: 78px;
+}
+
+.book-trigger {
+  display: block;
+  border: 0;
+  border-radius: 0.6rem;
+  cursor: pointer;
+  padding: 0;
+  background: transparent;
+}
+
+.book-trigger:focus-visible {
+  outline: 2px solid #1f4f3f;
+  outline-offset: 3px;
+}
+
+.book-cover {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  object-fit: cover;
+  border-radius: 0.6rem;
+  border: 1px solid #ffffffb8;
+  box-shadow: 0 6px 18px #0000002b;
+  transition: transform 180ms ease;
+  background: #ececec;
+}
+
+.book-card:hover .book-cover,
+.book-card[data-open="true"] .book-cover,
+.book-card:focus-within .book-cover {
+  transform: translateY(-3px);
+}
+
+.book-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 0.55rem);
+  transform: translateX(-50%) translateY(4px);
+  width: max-content;
+  max-width: min(240px, 72vw);
+  border-radius: 0.65rem;
+  border: 1px solid #0000001c;
+  background: #fffffff2;
+  color: #101314;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 16px 30px #00000021;
+  padding: 0.45rem 0.55rem;
+  z-index: 12;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 150ms ease,
+    transform 160ms ease;
+}
+
+.book-tooltip::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 100%;
+  border: 6px solid transparent;
+  border-top-color: #fffffff2;
+}
+
+.book-card:hover .book-tooltip,
+.book-card:focus-within .book-tooltip,
+.book-card[data-open="true"] .book-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.tooltip-title {
+  font-family: "Bitter", Georgia, serif;
+  font-size: 0.82rem;
+}
+
+.tooltip-author {
+  margin-top: 0.15rem;
+  color: #425055;
+  font-size: 0.74rem;
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 820px) {
+  .page-shell {
+    padding-inline: 0.55rem;
+  }
+
+  .tier-row {
+    grid-template-columns: 3.15rem 1fr;
+  }
+
+  .tier-row--named {
+    grid-template-columns: 5.6rem 1fr;
+  }
+
+  .tier-books {
+    gap: 0.45rem;
+  }
+
+  .book-card {
+    width: 67px;
+  }
+}
+
+@media (max-width: 540px) {
+  .hero {
+    margin-bottom: 0.75rem;
+  }
+
+  .tier-row {
+    border-radius: 0.85rem;
+    grid-template-columns: 2.9rem 1fr;
+  }
+
+  .tier-row--named {
+    grid-template-columns: 5rem 1fr;
+  }
+
+  .rank-value {
+    font-size: 1rem;
+  }
+
+  .book-card {
+    width: 60px;
+  }
+
+  .book-tooltip {
+    font-size: 0.75rem;
+    max-width: min(210px, 78vw);
+  }
+}

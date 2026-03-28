@@ -1,0 +1,34 @@
+---
+import type { Book } from "../lib/books";
+
+interface Props {
+  book: Book;
+  tooltipId: string;
+}
+
+const { book, tooltipId } = Astro.props;
+---
+
+<article class="book-card" data-tooltip-card>
+  <button
+    type="button"
+    class="book-trigger"
+    aria-expanded="false"
+    aria-controls={tooltipId}
+    aria-label={`Show details for ${book.title} by ${book.author}`}
+  >
+    <img
+      src={book.image}
+      alt={`Cover for ${book.title}`}
+      class="book-cover"
+      loading="lazy"
+      decoding="async"
+      referrerpolicy="no-referrer"
+    />
+  </button>
+
+  <div id={tooltipId} class="book-tooltip" role="tooltip">
+    <p class="tooltip-title">{book.title}</p>
+    <p class="tooltip-author">{book.author}</p>
+  </div>
+</article>
