@@ -1,81 +1,96 @@
 ranks:
-  "5":
-    - title: Project Hail Mary
-      author: Andy Weir
-      image: https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg
-  "4.5":
-    - title: The Tainted Cup
-      author: Robert Jackson Bennett
-      image: https://covers.openlibrary.org/b/id/14578473-L.jpg
-    - title: A Drop of Corruption
-      author: Robert Jackson Bennett
-      image: https://covers.openlibrary.org/b/id/14870214-L.jpg
-    - title: The Will of the Many
-      author: James Islington
-      image: https://covers.openlibrary.org/b/olid/OL46617015M-L.jpg
-  "4":
-    - title: Red Rising
-      author: Pierce Brown
-      image: https://covers.openlibrary.org/b/olid/OL26758016M-L.jpg
-    - title: Golden Son
-      author: Pierce Brown
-      image: https://covers.openlibrary.org/b/id/8454351-L.jpg
-
-  "3.5":
-    - title: The Strength of the Few
-      author: James Islington
-      image: https://covers.openlibrary.org/b/id/15150800-L.jpg
-    - title: Morning Star
-      author: Pierce Brown
-      image: https://covers.openlibrary.org/b/id/8566174-L.jpg
-  "3":
-  "2.5":
-
+  "1": null
   "2":
     - title: The Lightning Thief
       author: Rick Riordan
-      image: https://covers.openlibrary.org/b/olid/OL42476783M-L.jpg
-
-  "1.5":
-
-  "1":
-
-  "0.5":
-
+      image: /covers/the-lightning-thief-rick-riordan.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL42476783M-L.jpg
+  "3": null
+  "4":
+    - title: Red Rising
+      author: Pierce Brown
+      image: /covers/red-rising-pierce-brown.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL26758016M-L.jpg
+    - title: Golden Son
+      author: Pierce Brown
+      image: /covers/golden-son-pierce-brown.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/8454351-L.jpg
+  "5":
+    - title: Project Hail Mary
+      author: Andy Weir
+      image: /covers/project-hail-mary-andy-weir.jpg
+      sourceImage: https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg
+  "4.5":
+    - title: The Tainted Cup
+      author: Robert Jackson Bennett
+      image: /covers/the-tainted-cup-robert-jackson-bennett.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/14578473-L.jpg
+    - title: A Drop of Corruption
+      author: Robert Jackson Bennett
+      image: /covers/a-drop-of-corruption-robert-jackson-bennett.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/14870214-L.jpg
+    - title: The Will of the Many
+      author: James Islington
+      image: /covers/the-will-of-the-many-james-islington.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL46617015M-L.jpg
+  "3.5":
+    - title: The Strength of the Few
+      author: James Islington
+      image: /covers/the-strength-of-the-few-james-islington.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/15150800-L.jpg
+    - title: Morning Star
+      author: Pierce Brown
+      image: /covers/morning-star-pierce-brown.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/8566174-L.jpg
+  "2.5": null
+  "1.5": null
+  "0.5": null
 want_to_read:
   - title: Iron Gold
     author: Pierce Brown
-    image: https://covers.openlibrary.org/b/olid/OL26940101M-L.jpg
+    image: /covers/iron-gold-pierce-brown.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL26940101M-L.jpg
   - title: Dark Age
     author: Pierce Brown
-    image: https://covers.openlibrary.org/b/id/8748017-L.jpg
+    image: /covers/dark-age-pierce-brown.jpg
+    sourceImage: https://covers.openlibrary.org/b/id/8748017-L.jpg
   - title: Light Bringer
     author: Pierce Brown
-    image: https://covers.openlibrary.org/b/id/15157697-L.jpg
+    image: /covers/light-bringer-pierce-brown.jpg
+    sourceImage: https://covers.openlibrary.org/b/id/15157697-L.jpg
   - title: The Martian
     author: Andy Weir
-    image: https://covers.openlibrary.org/b/olid/OL32815550M-L.jpg
+    image: /covers/the-martian-andy-weir.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL32815550M-L.jpg
   - title: Dungeon Crawler Carl
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/id/15143022-L.jpg
+    image: /covers/dungeon-crawler-carl-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/id/15143022-L.jpg
   - title: Carl's Doomsday Scenario
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/id/11702962-L.jpg
+    image: /covers/carl-s-doomsday-scenario-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/id/11702962-L.jpg
   - title: The Dungeon Anarchist's Cookbook
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/olid/OL52237752M-L.jpg
+    image: /covers/the-dungeon-anarchist-s-cookbook-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL52237752M-L.jpg
   - title: The Gate of the Feral Gods
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/olid/OL33026536M-L.jpg
+    image: /covers/the-gate-of-the-feral-gods-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL33026536M-L.jpg
   - title: The Butcher's Masquerade
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/olid/OL57519404M-L.jpg
+    image: /covers/the-butcher-s-masquerade-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL57519404M-L.jpg
   - title: The Eye of the Bedlam Bride
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/olid/OL57538307M-L.jpg
+    image: /covers/the-eye-of-the-bedlam-bride-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL57538307M-L.jpg
   - title: This Inevitable Ruin
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/olid/OL56917601M-L.jpg
+    image: /covers/this-inevitable-ruin-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL56917601M-L.jpg
   - title: A Parade of Horribles
     author: Matt Dinniman
-    image: https://covers.openlibrary.org/b/olid/OL60594148M-L.jpg
+    image: /covers/a-parade-of-horribles-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL60594148M-L.jpg
