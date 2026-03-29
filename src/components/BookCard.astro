@@ -21,6 +21,7 @@ const { book, defaultEmojis } = Astro.props;
     data-image={book.image}
     data-notes={book.notes ?? ""}
     data-emojis={book.emojis ?? defaultEmojis ?? ""}
+    data-goodreads-url={book.goodreadsUrl ?? ""}
   >
     <img
       src={book.image}

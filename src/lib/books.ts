@@ -11,6 +11,7 @@ export interface Book {
   image: string;
   notes?: string;
   emojis?: string;
+  goodreadsUrl?: string;
 }
 
 export interface TierRow {
@@ -38,7 +39,7 @@ export const RANK_COLORS: Record<Rank, string> = {
   0.5: "#db3a34",
 };
 
-type RawBook = Partial<Book> & { notes?: unknown; emojis?: unknown };
+type RawBook = Partial<Book> & { notes?: unknown; emojis?: unknown; goodreadsUrl?: unknown };
 type RawBooksFile = {
   ranks?: Record<string, RawBook[] | undefined>;
   want_to_read?: RawBook[];
@@ -75,12 +76,18 @@ function parseBook(rawBook: RawBook, rowLabel: string, index: number): Book {
       ? rawBook.emojis.trim()
       : undefined;
 
+  const goodreadsUrl =
+    typeof rawBook.goodreadsUrl === "string" && rawBook.goodreadsUrl.trim().length > 0
+      ? rawBook.goodreadsUrl.trim()
+      : undefined;
+
   return {
     title: rawBook.title!.trim(),
     author: rawBook.author!.trim(),
     image: rawBook.image!.trim(),
     ...(notes !== undefined && { notes }),
     ...(emojis !== undefined && { emojis }),
+    ...(goodreadsUrl !== undefined && { goodreadsUrl }),
   };
 }
 

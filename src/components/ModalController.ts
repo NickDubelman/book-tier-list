@@ -5,14 +5,16 @@ function openModal(trigger: HTMLButtonElement): void {
   const authorEl = document.getElementById("modal-book-author");
   const emojisEl = document.getElementById("modal-book-emojis");
   const notesEl = document.getElementById("modal-book-notes");
+  const goodreadsEl = document.getElementById("modal-book-goodreads") as HTMLAnchorElement | null;
 
-  if (!overlay || !coverEl || !titleEl || !authorEl || !emojisEl || !notesEl) return;
+  if (!overlay || !coverEl || !titleEl || !authorEl || !emojisEl || !notesEl || !goodreadsEl) return;
 
   const title = trigger.dataset.title ?? "";
   const author = trigger.dataset.author ?? "";
   const image = trigger.dataset.image ?? "";
   const emojis = trigger.dataset.emojis ?? "";
   const notes = trigger.dataset.notes ?? "";
+  const goodreadsUrl = trigger.dataset.goodreadsUrl ?? "";
 
   coverEl.src = image;
   coverEl.alt = `Cover for ${title}`;
@@ -22,6 +24,8 @@ function openModal(trigger: HTMLButtonElement): void {
   emojisEl.style.display = emojis ? "" : "none";
   notesEl.textContent = notes;
   notesEl.style.display = notes ? "" : "none";
+  goodreadsEl.href = goodreadsUrl;
+  goodreadsEl.style.display = goodreadsUrl ? "" : "none";
 
   overlay.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
