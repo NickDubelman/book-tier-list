@@ -10,7 +10,7 @@ interface Props {
   books: Book[];
 }
 
-const { label, caption, color, books } = Astro.props;
+const { rowKey, label, caption, color, books } = Astro.props;
 const isNamedLabel = Number.isNaN(Number(label));
 ---
 
@@ -31,7 +31,7 @@ const isNamedLabel = Number.isNaN(Number(label));
       <ul class="tier-books" role="list">
         {books.map((book) => (
           <li>
-            <BookCard book={book} />
+            <BookCard book={book} defaultEmojis={rowKey === "want_to_read" ? "📚" : undefined} />
           </li>
         ))}
       </ul>

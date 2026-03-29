@@ -3,9 +3,10 @@ import type { Book } from "../lib/books";
 
 interface Props {
   book: Book;
+  defaultEmojis?: string;
 }
 
-const { book } = Astro.props;
+const { book, defaultEmojis } = Astro.props;
 ---
 
 <article class="book-card" data-book-card>
@@ -19,7 +20,7 @@ const { book } = Astro.props;
     data-author={book.author}
     data-image={book.image}
     data-notes={book.notes ?? ""}
-    data-emojis={book.emojis ?? ""}
+    data-emojis={book.emojis ?? defaultEmojis ?? ""}
   >
     <img
       src={book.image}

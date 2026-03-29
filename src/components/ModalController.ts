@@ -24,6 +24,7 @@ function openModal(trigger: HTMLButtonElement): void {
   notesEl.style.display = notes ? "" : "none";
 
   overlay.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 
   const closeBtn = overlay.querySelector<HTMLButtonElement>(".modal-close");
   closeBtn?.focus();
@@ -34,6 +35,7 @@ function closeModal(returnFocus?: HTMLElement): void {
   if (!overlay) return;
 
   overlay.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
   returnFocus?.focus();
 }
 
