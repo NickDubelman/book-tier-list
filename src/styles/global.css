@@ -33,7 +33,7 @@ p {
 .page-shell {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 1.4rem 0.9rem 2.5rem;
+  padding: calc(1.4rem + env(safe-area-inset-top)) 0.9rem calc(2.5rem + env(safe-area-inset-bottom));
 }
 
 .hero {
@@ -369,7 +369,7 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 1.25rem 1.25rem 1.5rem;
+    padding: 1.25rem 1.25rem calc(1.5rem + env(safe-area-inset-bottom));
   }
 
   .modal-info {
