@@ -198,6 +198,7 @@ p {
   position: relative;
   background: #fff;
   border-radius: 1rem;
+  overscroll-behavior: contain;
   max-width: 420px;
   width: 100%;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
