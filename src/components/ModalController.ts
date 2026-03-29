@@ -3,19 +3,23 @@ function openModal(trigger: HTMLButtonElement): void {
   const coverEl = document.getElementById("modal-cover") as HTMLImageElement | null;
   const titleEl = document.getElementById("modal-book-title");
   const authorEl = document.getElementById("modal-book-author");
+  const emojisEl = document.getElementById("modal-book-emojis");
   const notesEl = document.getElementById("modal-book-notes");
 
-  if (!overlay || !coverEl || !titleEl || !authorEl || !notesEl) return;
+  if (!overlay || !coverEl || !titleEl || !authorEl || !emojisEl || !notesEl) return;
 
   const title = trigger.dataset.title ?? "";
   const author = trigger.dataset.author ?? "";
   const image = trigger.dataset.image ?? "";
+  const emojis = trigger.dataset.emojis ?? "";
   const notes = trigger.dataset.notes ?? "";
 
   coverEl.src = image;
   coverEl.alt = `Cover for ${title}`;
   titleEl.textContent = title;
   authorEl.textContent = author;
+  emojisEl.textContent = emojis;
+  emojisEl.style.display = emojis ? "" : "none";
   notesEl.textContent = notes;
   notesEl.style.display = notes ? "" : "none";
 
@@ -51,6 +55,13 @@ export function setupModalController(): void {
 
   const overlay = document.getElementById("book-modal-overlay");
   if (!overlay) return;
+
+  // Prevent text selection when mousedown on backdrop causes mouseup inside modal
+  overlay.addEventListener("mousedown", (event) => {
+    if (event.target === overlay) {
+      event.preventDefault();
+    }
+  });
 
   // Close on backdrop click (not on modal itself)
   overlay.addEventListener("click", (event) => {

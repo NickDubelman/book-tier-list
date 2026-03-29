@@ -19,6 +19,7 @@ const { book } = Astro.props;
     data-author={book.author}
     data-image={book.image}
     data-notes={book.notes ?? ""}
+    data-emojis={book.emojis ?? ""}
   >
     <img
       src={book.image}
