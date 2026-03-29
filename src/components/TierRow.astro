@@ -10,9 +10,8 @@ interface Props {
   books: Book[];
 }
 
-const { rowKey, label, caption, color, books } = Astro.props;
+const { label, caption, color, books } = Astro.props;
 const isNamedLabel = Number.isNaN(Number(label));
-const tooltipPrefix = rowKey.replace(/[^a-zA-Z0-9-_]/g, "-");
 ---
 
 <section
@@ -30,12 +29,9 @@ const tooltipPrefix = rowKey.replace(/[^a-zA-Z0-9-_]/g, "-");
   {
     books.length > 0 ? (
       <ul class="tier-books" role="list">
-        {books.map((book, index) => (
+        {books.map((book) => (
           <li>
-            <BookCard
-              book={book}
-              tooltipId={`tooltip-${tooltipPrefix}-${index}`}
-            />
+            <BookCard book={book} />
           </li>
         ))}
       </ul>

@@ -9,6 +9,7 @@ export interface Book {
   title: string;
   author: string;
   image: string;
+  notes?: string;
 }
 
 export interface TierRow {
@@ -36,7 +37,7 @@ export const RANK_COLORS: Record<Rank, string> = {
   0.5: "#db3a34",
 };
 
-type RawBook = Partial<Book>;
+type RawBook = Partial<Book> & { notes?: unknown };
 type RawBooksFile = {
   ranks?: Record<string, RawBook[] | undefined>;
   want_to_read?: RawBook[];
@@ -63,10 +64,16 @@ function parseBook(rawBook: RawBook, rowLabel: string, index: number): Book {
     );
   }
 
+  const notes =
+    typeof rawBook.notes === "string" && rawBook.notes.trim().length > 0
+      ? rawBook.notes.trim()
+      : undefined;
+
   return {
     title: rawBook.title!.trim(),
     author: rawBook.author!.trim(),
     image: rawBook.image!.trim(),
+    ...(notes !== undefined && { notes }),
   };
 }
 

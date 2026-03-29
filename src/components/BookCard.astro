@@ -3,19 +3,22 @@ import type { Book } from "../lib/books";
 
 interface Props {
   book: Book;
-  tooltipId: string;
 }
 
-const { book, tooltipId } = Astro.props;
+const { book } = Astro.props;
 ---
 
-<article class="book-card" data-tooltip-card>
+<article class="book-card" data-book-card>
   <button
     type="button"
     class="book-trigger"
-    aria-expanded="false"
-    aria-controls={tooltipId}
+    aria-haspopup="dialog"
+    aria-controls="book-modal"
     aria-label={`Show details for ${book.title} by ${book.author}`}
+    data-title={book.title}
+    data-author={book.author}
+    data-image={book.image}
+    data-notes={book.notes ?? ""}
   >
     <img
       src={book.image}
@@ -26,9 +29,4 @@ const { book, tooltipId } = Astro.props;
       referrerpolicy="no-referrer"
     />
   </button>
-
-  <div id={tooltipId} class="book-tooltip" role="tooltip">
-    <p class="tooltip-title">{book.title}</p>
-    <p class="tooltip-author">{book.author}</p>
-  </div>
 </article>

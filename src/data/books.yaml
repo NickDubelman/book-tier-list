@@ -1,50 +1,82 @@
 ranks:
-  "1": null
-  "2":
-    - title: The Lightning Thief
-      author: Rick Riordan
-      image: /covers/the-lightning-thief-rick-riordan.jpg
-      sourceImage: https://covers.openlibrary.org/b/olid/OL42476783M-L.jpg
-  "3": null
-  "4":
-    - title: Red Rising
-      author: Pierce Brown
-      image: /covers/red-rising-pierce-brown.jpg
-      sourceImage: https://covers.openlibrary.org/b/olid/OL26758016M-L.jpg
-    - title: Golden Son
-      author: Pierce Brown
-      image: /covers/golden-son-pierce-brown.jpg
-      sourceImage: https://covers.openlibrary.org/b/id/8454351-L.jpg
   "5":
     - title: Project Hail Mary
       author: Andy Weir
       image: /covers/project-hail-mary-andy-weir.jpg
       sourceImage: https://covers.openlibrary.org/b/isbn/9780593135204-L.jpg
+      notes: >
+        👐 Audiobook was the ideal format for this story. Perfect ending.
+        Definitely glad I read it before getting any spoilers from the movie trailer.
   "4.5":
     - title: The Tainted Cup
       author: Robert Jackson Bennett
       image: /covers/the-tainted-cup-robert-jackson-bennett.jpg
       sourceImage: https://covers.openlibrary.org/b/id/14578473-L.jpg
+      notes: >
+        🕵️‍♂️ First book of the Shadow of the Leviathan series. It's a Holmes-and-Watson-style mystery
+        with a fantasy setting. Audiobook has great voices. Very funny at times.
     - title: A Drop of Corruption
       author: Robert Jackson Bennett
       image: /covers/a-drop-of-corruption-robert-jackson-bennett.jpg
       sourceImage: https://covers.openlibrary.org/b/id/14870214-L.jpg
+      notes: >
+        🕵️‍♂️ Second book of the Shadow of the Leviathan series. It's a Holmes-and-Watson-style mystery
+        with a fantasy setting. Audiobook has great voices. Very funny at times.
     - title: The Will of the Many
       author: James Islington
       image: /covers/the-will-of-the-many-james-islington.jpg
       sourceImage: https://covers.openlibrary.org/b/olid/OL46617015M-L.jpg
+      notes: >
+        🔺 First book of the The Hierarchy series. Loved the story and the characters.
+        This is a "basic" way to describe it, but it felt like a mix of Harry Potter, Hunger Games, with a touch of Dune...
+        I wish the audiobook voices were a little more distinct.
+  "4":
+    - title: Red Rising
+      author: Pierce Brown
+      image: /covers/red-rising-pierce-brown.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL26758016M-L.jpg
+      notes: >
+        First book of the Red Rising series. I listened to the dramatized adaptation, which is a cool experience.
+        Many people seem to find this the weakest in the series, but I really liked it.
+        Kind of like a mix of Divergent and Hunger Games.
+    - title: Golden Son
+      author: Pierce Brown
+      image: /covers/golden-son-pierce-brown.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/8454351-L.jpg
+      notes: >
+        🌖 Second book of the Red Rising series. I listened to the dramatized adaptation.
   "3.5":
     - title: The Strength of the Few
       author: James Islington
       image: /covers/the-strength-of-the-few-james-islington.jpg
       sourceImage: https://covers.openlibrary.org/b/id/15150800-L.jpg
+      notes: >
+        🔺 Second book of the The Hierarchy series. A lot of people seemed to dislike this one...
+        I think it was a step-down from Will of the Many, but I still really liked it.
+        Excited to see where this series goes and hoping we don't have to wait too long for the third book 🤞.
     - title: Morning Star
       author: Pierce Brown
       image: /covers/morning-star-pierce-brown.jpg
       sourceImage: https://covers.openlibrary.org/b/id/8566174-L.jpg
+      notes: >
+        🚀 Third book of the Red Rising series. I listened to the dramatized adaptation.
+        For some reason I was a little bored at the very start (perhaps some burnout from binging
+        these books very quickly) but the middle and end were strong.
+  "3": null
   "2.5": null
+  "2":
+    - title: The Lightning Thief
+      author: Rick Riordan
+      image: /covers/the-lightning-thief-rick-riordan.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL42476783M-L.jpg
+      notes: >
+        🔱 First book of the Percy Jackson & the Olympians series. I didn't really enjoy it...
+        Not sure what I was expecting; I think I underestimated the extent to which it's a kids book.
+        For as little as I enjoyed it, somehow the movie was 10x worse...
   "1.5": null
+  "1": null
   "0.5": null
+
 want_to_read:
   - title: Iron Gold
     author: Pierce Brown

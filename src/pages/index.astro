@@ -53,10 +53,30 @@ const tierRows = getTierRows();
       </section>
     </main>
 
-    <script>
-      import { setupTooltipController } from "../components/TooltipController.ts";
+    <div id="book-modal-overlay" class="modal-overlay" aria-hidden="true">
+      <div
+        id="book-modal"
+        class="modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modal-book-title"
+      >
+        <button class="modal-close" aria-label="Close">✕</button>
+        <div class="modal-body">
+          <img id="modal-cover" class="modal-cover" src="" alt="" />
+          <div class="modal-info">
+            <p id="modal-book-title" class="modal-book-title"></p>
+            <p id="modal-book-author" class="modal-book-author"></p>
+            <p id="modal-book-notes" class="modal-book-notes"></p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      setupTooltipController();
+    <script>
+      import { setupModalController } from "../components/ModalController.ts";
+
+      setupModalController();
     </script>
   </body>
 </html>
