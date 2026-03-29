@@ -1,17 +1,9 @@
-let savedScrollY = 0;
-
 function lockScroll(): void {
-  savedScrollY = window.scrollY;
-  document.body.style.top = `-${savedScrollY}px`;
-  document.body.style.position = "fixed";
-  document.body.style.width = "100%";
+  document.documentElement.style.overflow = "hidden";
 }
 
 function unlockScroll(): void {
-  document.body.style.position = "";
-  document.body.style.top = "";
-  document.body.style.width = "";
-  window.scrollTo(0, savedScrollY);
+  document.documentElement.style.overflow = "";
 }
 
 function openModal(trigger: HTMLButtonElement): void {
