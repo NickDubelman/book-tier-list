@@ -29,6 +29,8 @@ function openModal(trigger: HTMLButtonElement): void {
 
   overlay.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
+  const themeColorMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+  if (themeColorMeta) themeColorMeta.content = "#1a1a1a";
 
   const closeBtn = overlay.querySelector<HTMLButtonElement>(".modal-close");
   closeBtn?.focus();
@@ -40,6 +42,8 @@ function closeModal(returnFocus?: HTMLElement): void {
 
   overlay.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
+  const themeColorMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
+  if (themeColorMeta) themeColorMeta.content = "#f6f0e4";
   returnFocus?.focus();
 }
 
