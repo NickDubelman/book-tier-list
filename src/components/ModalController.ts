@@ -27,10 +27,12 @@ function openModal(trigger: HTMLButtonElement): void {
   goodreadsEl.href = goodreadsUrl;
   goodreadsEl.style.display = goodreadsUrl ? "" : "none";
 
-  overlay.setAttribute("aria-hidden", "false");
+  overlay.style.display = "";
+  // Allow display to apply before triggering the fade-in
+  requestAnimationFrame(() => {
+    overlay.setAttribute("aria-hidden", "false");
+  });
   document.body.style.overflow = "hidden";
-  const themeColorMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
-  if (themeColorMeta) themeColorMeta.content = "#1a1a1a";
 
   const closeBtn = overlay.querySelector<HTMLButtonElement>(".modal-close");
   closeBtn?.focus();
@@ -42,8 +44,9 @@ function closeModal(returnFocus?: HTMLElement): void {
 
   overlay.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
-  const themeColorMeta = document.querySelector<HTMLMetaElement>('meta[name="theme-color"]');
-  if (themeColorMeta) themeColorMeta.content = "#f6f0e4";
+  overlay.addEventListener("transitionend", () => {
+    overlay.style.display = "none";
+  }, { once: true });
   returnFocus?.focus();
 }
 
