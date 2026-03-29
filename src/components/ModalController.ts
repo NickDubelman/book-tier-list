@@ -1,3 +1,19 @@
+let savedScrollY = 0;
+
+function lockScroll(): void {
+  savedScrollY = window.scrollY;
+  document.body.style.top = `-${savedScrollY}px`;
+  document.body.style.position = "fixed";
+  document.body.style.width = "100%";
+}
+
+function unlockScroll(): void {
+  document.body.style.position = "";
+  document.body.style.top = "";
+  document.body.style.width = "";
+  window.scrollTo(0, savedScrollY);
+}
+
 function openModal(trigger: HTMLButtonElement): void {
   const overlay = document.getElementById("book-modal-overlay");
   const coverEl = document.getElementById("modal-cover") as HTMLImageElement | null;
@@ -27,12 +43,12 @@ function openModal(trigger: HTMLButtonElement): void {
   goodreadsEl.href = goodreadsUrl;
   goodreadsEl.style.display = goodreadsUrl ? "" : "none";
 
+  lockScroll();
   overlay.style.display = "";
   // Allow display to apply before triggering the fade-in
   requestAnimationFrame(() => {
     overlay.setAttribute("aria-hidden", "false");
   });
-  document.body.style.overflow = "hidden";
 
   const closeBtn = overlay.querySelector<HTMLButtonElement>(".modal-close");
   closeBtn?.focus();
@@ -43,7 +59,7 @@ function closeModal(returnFocus?: HTMLElement): void {
   if (!overlay) return;
 
   overlay.setAttribute("aria-hidden", "true");
-  document.body.style.overflow = "";
+  unlockScroll();
   overlay.addEventListener("transitionend", () => {
     overlay.style.display = "none";
   }, { once: true });
