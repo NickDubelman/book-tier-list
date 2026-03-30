@@ -27,12 +27,63 @@ const tierRows = getTierRows();
       rel="stylesheet"
     />
     <title>Nick's Book Log</title>
+    <script is:inline>
+      const saved = localStorage.getItem("theme");
+      if (saved) document.documentElement.style.colorScheme = saved;
+    </script>
   </head>
 
   <body>
     <main class="page-shell">
       <header class="page-header">
-        <h1>🤓 Nick's Book Log</h1>
+        <div class="page-header-top">
+          <h1>🤓 Nick's Book Log</h1>
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            <span
+              class="theme-toggle-icon theme-toggle-icon--light"
+              aria-hidden="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="12" cy="12" r="4"></circle><path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                ></path>
+              </svg>
+            </span>
+            <span
+              class="theme-toggle-icon theme-toggle-icon--dark"
+              aria-hidden="true"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+              </svg>
+            </span>
+          </button>
+        </div>
+
         <p class="page-header-subtitle">
           Started keeping track in 2025. I read all of these as audiobooks.
         </p>
@@ -68,8 +119,8 @@ const tierRows = getTierRows();
               class="modal-book-goodreads"
               href=""
               target="_blank"
-              rel="noopener noreferrer"
-            >View on Goodreads ↗</a>
+              rel="noopener noreferrer">View on Goodreads ↗</a
+            >
           </div>
         </div>
       </div>
@@ -82,6 +133,27 @@ const tierRows = getTierRows();
       import { setupModalController } from "../components/ModalController.ts";
 
       setupModalController();
+    </script>
+
+    <script is:inline>
+      const btn = document.getElementById("theme-toggle");
+      function getScheme() {
+        return (
+          document.documentElement.style.colorScheme ||
+          (matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light")
+        );
+      }
+      function applyScheme(scheme) {
+        document.documentElement.style.colorScheme = scheme;
+        localStorage.setItem("theme", scheme);
+        btn.setAttribute("aria-pressed", scheme === "dark");
+      }
+      btn.addEventListener("click", () => {
+        applyScheme(getScheme() === "dark" ? "light" : "dark");
+      });
+      btn.setAttribute("aria-pressed", getScheme() === "dark");
     </script>
   </body>
 </html>

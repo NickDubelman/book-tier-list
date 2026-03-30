@@ -59,6 +59,53 @@ p {
   animation: rise-in 520ms ease-out both;
 }
 
+.page-header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  background: light-dark(rgba(0, 0, 0, 0.06), rgba(255, 255, 255, 0.1));
+  border: 1px solid light-dark(rgba(0, 0, 0, 0.08), rgba(255, 255, 255, 0.12));
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  transition: background 150ms ease;
+}
+
+.theme-toggle:hover {
+  background: light-dark(rgba(0, 0, 0, 0.11), rgba(255, 255, 255, 0.18));
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Default (dark system): show ☀️ to switch to light */
+.theme-toggle-icon--light { display: flex; }
+.theme-toggle-icon--dark  { display: none; }
+
+/* Light system preference: show 🌙 to switch to dark */
+@media (prefers-color-scheme: light) {
+  .theme-toggle-icon--light { display: none; }
+  .theme-toggle-icon--dark  { display: flex; }
+}
+
+/* Explicit user overrides take priority */
+:root[style*="color-scheme: dark"] .theme-toggle-icon--light { display: flex; }
+:root[style*="color-scheme: dark"] .theme-toggle-icon--dark  { display: none; }
+:root[style*="color-scheme: light"] .theme-toggle-icon--light { display: none; }
+:root[style*="color-scheme: light"] .theme-toggle-icon--dark  { display: flex; }
+
 .page-header h1 {
   font-family: "Bitter", Georgia, serif;
   line-height: 1.1;
