@@ -17,6 +17,7 @@
   --modal-close-bg: light-dark(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.1));
   --modal-close-hover: light-dark(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0.18));
   --modal-close-color: light-dark(#445, #aab8bc);
+  --focus-color: light-dark(#1f4f3f, #ffffff);
 }
 
 * {
@@ -170,7 +171,7 @@ p {
 }
 
 .book-trigger:focus-visible {
-  outline: 2px solid #1f4f3f;
+  outline: 2px solid var(--focus-color);
   outline-offset: 3px;
 }
 
@@ -179,7 +180,6 @@ p {
   aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: 0.6rem;
-  border: 1px solid #ffffffb8;
   box-shadow: 0 6px 18px #0000002b;
   transition: transform 180ms ease;
   background: #ececec;
@@ -216,7 +216,7 @@ p {
 }
 
 .modal-close:focus-visible {
-  outline: 2px solid #1f4f3f;
+  outline: 2px solid var(--focus-color);
   outline-offset: 2px;
 }
 
@@ -237,7 +237,6 @@ p {
   aspect-ratio: 2 / 3;
   object-fit: cover;
   border-radius: 0.5rem;
-  border: 1px solid #ffffffb8;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   flex-shrink: 0;
   align-self: flex-start;
