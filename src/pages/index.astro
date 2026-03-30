@@ -31,9 +31,9 @@ const tierRows = getTierRows();
 
   <body>
     <main class="page-shell">
-      <header class="hero">
+      <header class="page-header">
         <h1>🤓 Nick's Book Log</h1>
-        <p class="hero-subtitle">
+        <p class="page-header-subtitle">
           Started keeping track in 2025. I read all of these as audiobooks.
         </p>
       </header>
@@ -53,14 +53,8 @@ const tierRows = getTierRows();
       </section>
     </main>
 
-    <div id="book-modal-overlay" class="modal-overlay" aria-hidden="true" style="display:none">
-      <div
-        id="book-modal"
-        class="modal"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="modal-book-title"
-      >
+    <dialog id="book-modal" class="modal modal-bottom sm:modal-middle">
+      <div class="modal-box p-0 overflow-hidden max-w-[420px]">
         <button class="modal-close" aria-label="Close">✕</button>
         <div class="modal-body">
           <img id="modal-cover" class="modal-cover" src="" alt="" />
@@ -79,7 +73,10 @@ const tierRows = getTierRows();
           </div>
         </div>
       </div>
-    </div>
+      <form method="dialog" class="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
 
     <script>
       import { setupModalController } from "../components/ModalController.ts";

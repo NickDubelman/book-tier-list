@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@plugin "daisyui";
 
 :root {
   --bg-a: #f6f0e4;
@@ -36,7 +37,7 @@ p {
   padding: calc(1.4rem + env(safe-area-inset-top)) 0.9rem calc(2.5rem + env(safe-area-inset-bottom));
 }
 
-.hero {
+.page-header {
   border: 1px solid #00000012;
   border-radius: 1.1rem;
   background: var(--panel);
@@ -47,13 +48,13 @@ p {
   animation: rise-in 520ms ease-out both;
 }
 
-.hero h1 {
+.page-header h1 {
   font-family: "Bitter", Georgia, serif;
   line-height: 1.1;
   font-size: clamp(1.7rem, 5vw, 2.9rem);
 }
 
-.hero-subtitle {
+.page-header-subtitle {
   margin-top: 0.45rem;
   color: var(--muted);
   font-size: 0.92rem;
@@ -173,44 +174,7 @@ p {
   transform: translateY(-2px);
 }
 
-/* Modal overlay */
-.modal-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.45);
-  z-index: 100;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 180ms ease;
-}
-
-.modal-overlay[aria-hidden="false"] {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* Modal dialog */
-.modal {
-  position: relative;
-  background: #fff;
-  border-radius: 1rem;
-  overscroll-behavior: contain;
-  max-width: 420px;
-  width: 100%;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
-  transform: translateY(10px);
-  transition: transform 200ms ease;
-  overflow: hidden;
-}
-
-.modal-overlay[aria-hidden="false"] .modal {
-  transform: translateY(0);
-}
-
+/* Modal close button */
 .modal-close {
   position: absolute;
   top: 0.65rem;
@@ -345,7 +309,7 @@ p {
 }
 
 @media (max-width: 540px) {
-  .hero {
+  .page-header {
     margin-bottom: 0.75rem;
   }
 
@@ -383,18 +347,4 @@ p {
     align-self: center;
   }
 
-  .modal {
-    border-radius: 1.25rem 1.25rem 0 0;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-width: 100%;
-    transform: translateY(20px);
-  }
-
-  .modal-overlay {
-    align-items: flex-end;
-    padding: 0;
-  }
 }
