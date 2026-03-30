@@ -21,5 +21,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
+# generated screenshot
+screenshot.png
+
 # jetbrains setting folder
 .idea/

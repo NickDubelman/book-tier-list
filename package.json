@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "download-covers": "node scripts/download-covers.js"
+    "download-covers": "node scripts/download-covers.js",
+    "screenshot": "node scripts/screenshot.js"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.2.2",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.8",
+    "playwright": "^1.58.2",
     "typescript": "^5.9.3"
   }
 }

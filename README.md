@@ -12,6 +12,7 @@ An Astro + Tailwind project for ranking books in numeric tiers from 5 down to 0.
 - Book cards with image covers and tooltip metadata (title + author).
 - Tooltip behavior supports desktop hover/focus and mobile tap-toggle.
 - Mobile-first responsive layout.
+- Screenshot view at `/screenshot`: dense, dark, traditional tier list layout optimized for sharing.
 
 ## Project Structure
 
@@ -21,6 +22,8 @@ An Astro + Tailwind project for ranking books in numeric tiers from 5 down to 0.
 - `src/components/BookCard.astro`: book cover card and tooltip markup.
 - `src/components/TooltipController.ts`: tooltip interactions for tap/outside click/escape.
 - `src/pages/index.astro`: page composition.
+- `src/pages/screenshot.astro`: screenshot-optimized view.
+- `src/components/ScreenshotTierRow.astro`: compact tier row for the screenshot view.
 - `src/styles/global.css`: global look and responsive styling.
 
 ## YAML Format
@@ -61,3 +64,4 @@ Allowed `ranks` keys are strictly: 5, 4.5, 4, 3.5, 3, 2.5, 2, 1.5, 1, 0.5.
 - `npm run check`: run Astro type and project checks.
 - `npm run build`: build production output.
 - `npm run preview`: preview the built site.
+- `npm run screenshot`: generate `screenshot.png` from the deployed site using Playwright. Pass a URL argument to target a different URL (e.g. `npm run screenshot http://localhost:4321/screenshot` for local dev). Requires `npx playwright install chromium` on first use.
