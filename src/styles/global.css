@@ -2,11 +2,21 @@
 @plugin "daisyui";
 
 :root {
-  --bg-a: #f6f0e4;
-  --bg-b: #f5f9e8;
-  --ink: #1d2224;
-  --muted: #536063;
-  --panel: rgba(255, 255, 255, 0.8);
+  color-scheme: light dark;
+  --bg-a: light-dark(#f6f0e4, #1a1f21);
+  --bg-b: light-dark(#f5f9e8, #1c2120);
+  --ink: light-dark(#1d2224, #e8ecec);
+  --muted: light-dark(#536063, #8fa3a8);
+  --panel: light-dark(rgba(255, 255, 255, 0.8), rgba(40, 50, 52, 0.85));
+  --modal-bg: light-dark(#ffffff, #242e30);
+  --modal-title: light-dark(#101314, #e8ecec);
+  --modal-author: light-dark(#536063, #8fa3a8);
+  --modal-notes: light-dark(#3a4a4e, #b0c4c8);
+  --modal-link: light-dark(#536063, #8fa3a8);
+  --modal-link-hover: light-dark(#1d2224, #e8ecec);
+  --modal-close-bg: light-dark(rgba(0, 0, 0, 0.07), rgba(255, 255, 255, 0.1));
+  --modal-close-hover: light-dark(rgba(0, 0, 0, 0.13), rgba(255, 255, 255, 0.18));
+  --modal-close-color: light-dark(#445, #aab8bc);
 }
 
 * {
@@ -19,8 +29,8 @@ body {
   color: var(--ink);
   font-family: "Archivo", "Segoe UI", Tahoma, sans-serif;
   background:
-    radial-gradient(circle at 8% 10%, #ffffffc7 0, #ffffff00 40%),
-    radial-gradient(circle at 85% 15%, #d0f4d4a8 0, #d0f4d400 45%),
+    radial-gradient(circle at 8% 10%, light-dark(#ffffffc7, #ffffff0a) 0, #ffffff00 40%),
+    radial-gradient(circle at 85% 15%, light-dark(#d0f4d4a8, #1a3a2a80) 0, #d0f4d400 45%),
     linear-gradient(155deg, var(--bg-a), var(--bg-b));
 }
 
@@ -38,7 +48,7 @@ p {
 }
 
 .page-header {
-  border: 1px solid #00000012;
+  border: 1px solid light-dark(#00000012, #ffffff12);
   border-radius: 1.1rem;
   background: var(--panel);
   backdrop-filter: blur(6px);
@@ -72,9 +82,15 @@ p {
   display: grid;
   grid-template-columns: 3.8rem 1fr;
   align-items: stretch;
-  border: 1px solid color-mix(in oklab, var(--tier-color), white 70%);
+  border: 1px solid light-dark(
+    color-mix(in oklab, var(--tier-color), white 70%),
+    color-mix(in oklab, var(--tier-color), black 55%)
+  );
   border-radius: 1rem;
-  background: color-mix(in oklab, var(--tier-color), white 82%);
+  background: light-dark(
+    color-mix(in oklab, var(--tier-color), white 82%),
+    color-mix(in oklab, var(--tier-color), black 70%)
+  );
   box-shadow: 0 12px 26px
     color-mix(in oklab, var(--row-shadow), transparent 86%);
   overflow: visible;
@@ -134,7 +150,7 @@ p {
 
 .tier-empty {
   margin: 0;
-  color: #455256;
+  color: var(--muted);
   font-size: 0.87rem;
   padding: 0.8rem;
 }
@@ -179,7 +195,7 @@ p {
   position: absolute;
   top: 0.65rem;
   right: 0.65rem;
-  background: rgba(0, 0, 0, 0.07);
+  background: var(--modal-close-bg);
   border: 0;
   border-radius: 50%;
   width: 2rem;
@@ -187,7 +203,7 @@ p {
   cursor: pointer;
   font-size: 1rem;
   line-height: 1;
-  color: #445;
+  color: var(--modal-close-color);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -196,12 +212,17 @@ p {
 }
 
 .modal-close:hover {
-  background: rgba(0, 0, 0, 0.13);
+  background: var(--modal-close-hover);
 }
 
 .modal-close:focus-visible {
   outline: 2px solid #1f4f3f;
   outline-offset: 2px;
+}
+
+/* Override daisyUI modal-box background for dark mode */
+.modal-box {
+  background-color: var(--modal-bg) !important;
 }
 
 .modal-body {
@@ -237,12 +258,12 @@ p {
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.3;
-  color: #101314;
+  color: var(--modal-title);
 }
 
 .modal-book-author {
   margin-top: 0.3rem;
-  color: #536063;
+  color: var(--modal-author);
   font-size: 0.85rem;
 }
 
@@ -256,7 +277,7 @@ p {
 .modal-book-notes {
   margin-top: 0.55rem;
   font-size: 0.88rem;
-  color: #3a4a4e;
+  color: var(--modal-notes);
   line-height: 1.55;
   white-space: pre-wrap;
 }
@@ -265,12 +286,12 @@ p {
   display: inline-block;
   margin-top: 0.65rem;
   font-size: 0.82rem;
-  color: #536063;
+  color: var(--modal-link);
   text-decoration: none;
 }
 
 .modal-book-goodreads:hover {
-  color: #1d2224;
+  color: var(--modal-link-hover);
   text-decoration: underline;
 }
 
