@@ -1,5 +1,7 @@
 # Book Tier List
 
+**Live:** https://books.nick.town
+
 An Astro + Tailwind project for ranking books in numeric tiers from 5 down to 0.5.
 
 ## Features
