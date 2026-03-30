@@ -1,0 +1,72 @@
+---
+import type { TierRow } from "../lib/books";
+
+interface Props {
+  row: TierRow;
+}
+
+const { row } = Astro.props;
+---
+
+<div class="sc-row" style={`--tier-color: ${row.color}`}>
+  <div class="sc-label">
+    <span class="sc-rank">{row.label}</span>
+  </div>
+  <div class="sc-books">
+    {
+      row.books.map((book) => (
+        <img
+          class="sc-cover"
+          src={book.image}
+          alt={book.title}
+          loading="eager"
+          decoding="sync"
+        />
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .sc-row {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: stretch;
+  }
+
+  .sc-label {
+    background: var(--tier-color);
+    color: #ffffff;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 2px;
+    padding: 6px 4px;
+    min-height: 28px;
+  }
+
+  .sc-rank {
+    font-family: "Bitter", Georgia, serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .sc-books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    padding: 3px;
+    background: color-mix(in oklab, var(--tier-color), black 72%);
+  }
+
+  .sc-cover {
+    width: 88px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: block;
+    background: #2a2a2a;
+  }
+</style>

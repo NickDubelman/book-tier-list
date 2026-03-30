@@ -1,0 +1,45 @@
+---
+import ScreenshotTierRow from "../components/ScreenshotTierRow.astro";
+import { getTierRows } from "../lib/books";
+
+const tierRows = getTierRows();
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Bitter:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Nick's Book Log — Screenshot</title>
+  </head>
+
+  <body>
+    <div class="sc-shell">
+      {tierRows.map((row) => <ScreenshotTierRow row={row} />)}
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: #141414;
+    padding: 20px;
+    font-family: "Archivo", "Segoe UI", Tahoma, sans-serif;
+  }
+
+  .sc-shell {
+    display: grid;
+    gap: 3px;
+    width: fit-content;
+  }
+</style>
