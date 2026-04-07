@@ -78,6 +78,14 @@ ranks:
         Third book of the Red Rising series. I listened to the dramatized adaptation.
         For some reason I was a little bored at the very start (perhaps some burnout from binging
         these books very quickly) but the middle and end were strong.
+    - title: Iron Gold
+      author: Pierce Brown
+      image: /covers/iron-gold-pierce-brown.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL26940101M-L.jpg
+      goodreadsUrl: https://www.goodreads.com/book/show/33257757
+      emojis: 🟥 🟨
+      notes: >
+        Fourth book of the Red Rising series. I listened to the dramatized adaptation. Enjoyed the multiple PoVs.
   "3": null
   "2.5": null
   "2":
@@ -96,11 +104,6 @@ ranks:
   "0.5": null
 
 want_to_read:
-  - title: Iron Gold
-    author: Pierce Brown
-    image: /covers/iron-gold-pierce-brown.jpg
-    sourceImage: https://covers.openlibrary.org/b/olid/OL26940101M-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/33257757
   - title: Dark Age
     author: Pierce Brown
     image: /covers/dark-age-pierce-brown.jpg
