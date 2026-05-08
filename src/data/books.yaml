@@ -164,3 +164,13 @@ want_to_read:
     sourceImage: https://covers.openlibrary.org/b/olid/OL28684446M-L.jpg
     image: /covers/the-final-empire-brandon-sanderson.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/68428
+  - title: The Devil's Chessboard
+    author: David Talbot
+    image: /covers/the-devil-s-chessboard-david-talbot.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL27443384M-L.jpg
+    goodreadsUrl: https://www.goodreads.com/book/show/25525289
+  - title: The Magus
+    author: John Fowles
+    image: /covers/the-magus-john-fowles.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL7520522M-L.jpg
+    goodreadsUrl: https://www.goodreads.com/book/show/16286
