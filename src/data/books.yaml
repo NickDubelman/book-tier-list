@@ -38,6 +38,15 @@ ranks:
         First book of the The Hierarchy series. Loved the story and the characters.
         This is a "basic" way to describe it, but it felt like a mix of Harry Potter, Hunger Games, with a touch of Dune...
         I wish the audiobook voices were a little more distinct.
+    - title: Dungeon Crawler Carl
+      author: Matt Dinniman
+      image: /covers/dungeon-crawler-carl-matt-dinniman.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/15143022-L.jpg
+      goodreadsUrl: https://www.goodreads.com/book/show/56791389
+      emojis: 👾 👊 🐈
+      notes: >
+        First book of the Dungeon Crawler Carl series. I listened to the audiobook with my wife and we loved it!
+        I was surprised that she got into it.
   "4":
     - title: Red Rising
       author: Pierce Brown
@@ -119,11 +128,6 @@ want_to_read:
     image: /covers/the-martian-andy-weir.jpg
     sourceImage: https://covers.openlibrary.org/b/olid/OL32815550M-L.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/18007564
-  - title: Dungeon Crawler Carl
-    author: Matt Dinniman
-    image: /covers/dungeon-crawler-carl-matt-dinniman.jpg
-    sourceImage: https://covers.openlibrary.org/b/id/15143022-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/56791389
   - title: Carl's Doomsday Scenario
     author: Matt Dinniman
     image: /covers/carl-s-doomsday-scenario-matt-dinniman.jpg
