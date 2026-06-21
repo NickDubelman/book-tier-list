@@ -22,6 +22,10 @@ export interface TierRow {
   books: Book[];
 }
 
+const IN_PROGRESS_KEY = "in_progress";
+const IN_PROGRESS_LABEL = "In-Progress";
+const IN_PROGRESS_COLOR = "#14b8a6";
+
 const WANT_TO_READ_KEY = "want_to_read";
 const WANT_TO_READ_LABEL = "Want to Read";
 const WANT_TO_READ_COLOR = "#3b82f6";
@@ -42,6 +46,7 @@ export const RANK_COLORS: Record<Rank, string> = {
 type RawBook = Partial<Book> & { notes?: unknown; emojis?: unknown; goodreadsUrl?: unknown };
 type RawBooksFile = {
   ranks?: Record<string, RawBook[] | undefined>;
+  in_progress?: RawBook[];
   want_to_read?: RawBook[];
 };
 
@@ -124,6 +129,21 @@ export function getTierRows(): TierRow[] {
     };
   });
 
+  const inProgressRaw = parsed.in_progress ?? [];
+  if (!Array.isArray(inProgressRaw)) {
+    throw new Error(`${IN_PROGRESS_KEY} must map to an array of books.`);
+  }
+
+  const inProgressRow: TierRow = {
+    key: IN_PROGRESS_KEY,
+    label: IN_PROGRESS_LABEL,
+    caption: "Reading",
+    color: IN_PROGRESS_COLOR,
+    books: inProgressRaw.map((book, index) =>
+      parseBook(book, IN_PROGRESS_LABEL, index),
+    ),
+  };
+
   const wantToReadRaw = parsed.want_to_read ?? [];
   if (!Array.isArray(wantToReadRaw)) {
     throw new Error(`${WANT_TO_READ_KEY} must map to an array of books.`);
@@ -139,5 +159,5 @@ export function getTierRows(): TierRow[] {
     ),
   };
 
-  return [...rankedRows, wantToReadRow];
+  return [...rankedRows, inProgressRow, wantToReadRow];
 }

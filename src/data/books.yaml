@@ -47,6 +47,15 @@ ranks:
       notes: >
         First book of the Dungeon Crawler Carl series. I listened to the audiobook with my wife and we loved it!
         I was surprised that she got into it.
+    - title: Carl's Doomsday Scenario
+      author: Matt Dinniman
+      image: /covers/carl-s-doomsday-scenario-matt-dinniman.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/11702962-L.jpg
+      goodreadsUrl: https://www.goodreads.com/book/show/56377548
+      emojis: 🧝‍♂️ 🧨 💥
+      notes: >
+        Second book of the Dungeon Crawler Carl series. This one kept up the momentum of the first
+        book, but also felt unique and fresh.
   "4":
     - title: Red Rising
       author: Pierce Brown
@@ -112,12 +121,24 @@ ranks:
   "1": null
   "0.5": null
 
-want_to_read:
+in_progress:
   - title: Dark Age
     author: Pierce Brown
     image: /covers/dark-age-pierce-brown.jpg
     sourceImage: https://covers.openlibrary.org/b/id/8748017-L.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/29226553
+  - title: The Dungeon Anarchist's Cookbook
+    author: Matt Dinniman
+    image: /covers/the-dungeon-anarchist-s-cookbook-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL52237752M-L.jpg
+    goodreadsUrl: https://www.goodreads.com/book/show/57001971
+  - title: The Devil's Chessboard
+    author: David Talbot
+    image: /covers/the-devil-s-chessboard-david-talbot.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL27443384M-L.jpg
+    goodreadsUrl: https://www.goodreads.com/book/show/24723229
+
+want_to_read:
   - title: Light Bringer
     author: Pierce Brown
     image: /covers/light-bringer-pierce-brown.jpg
@@ -128,16 +149,6 @@ want_to_read:
     image: /covers/the-martian-andy-weir.jpg
     sourceImage: https://covers.openlibrary.org/b/olid/OL32815550M-L.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/18007564
-  - title: Carl's Doomsday Scenario
-    author: Matt Dinniman
-    image: /covers/carl-s-doomsday-scenario-matt-dinniman.jpg
-    sourceImage: https://covers.openlibrary.org/b/id/11702962-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/56377548
-  - title: The Dungeon Anarchist's Cookbook
-    author: Matt Dinniman
-    image: /covers/the-dungeon-anarchist-s-cookbook-matt-dinniman.jpg
-    sourceImage: https://covers.openlibrary.org/b/olid/OL52237752M-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/57001971
   - title: The Gate of the Feral Gods
     author: Matt Dinniman
     image: /covers/the-gate-of-the-feral-gods-matt-dinniman.jpg
@@ -168,11 +179,6 @@ want_to_read:
     sourceImage: https://covers.openlibrary.org/b/olid/OL28684446M-L.jpg
     image: /covers/the-final-empire-brandon-sanderson.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/68428
-  - title: The Devil's Chessboard
-    author: David Talbot
-    image: /covers/the-devil-s-chessboard-david-talbot.jpg
-    sourceImage: https://covers.openlibrary.org/b/olid/OL27443384M-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/24723229
   - title: The Magus
     author: John Fowles
     image: /covers/the-magus-john-fowles.jpg
