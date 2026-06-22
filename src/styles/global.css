@@ -146,7 +146,7 @@ p {
 }
 
 .tier-row--named {
-  grid-template-columns: 6.4rem 1fr;
+  grid-template-columns: 7.4rem 1fr;
 }
 
 .tier-label {
@@ -363,7 +363,7 @@ p {
   }
 
   .tier-row--named {
-    grid-template-columns: 5.6rem 1fr;
+    grid-template-columns: 6.6rem 1fr;
   }
 
   .tier-books {
@@ -386,7 +386,7 @@ p {
   }
 
   .tier-row--named {
-    grid-template-columns: 5rem 1fr;
+    grid-template-columns: 6rem 1fr;
   }
 
   .rank-value {
