@@ -47,15 +47,6 @@ ranks:
       notes: >
         First book of the Dungeon Crawler Carl series. I listened to the audiobook with my wife and we loved it!
         I was surprised that she got into it.
-    - title: Carl's Doomsday Scenario
-      author: Matt Dinniman
-      image: /covers/carl-s-doomsday-scenario-matt-dinniman.jpg
-      sourceImage: https://covers.openlibrary.org/b/id/11702962-L.jpg
-      goodreadsUrl: https://www.goodreads.com/book/show/56377548
-      emojis: 🧝‍♂️ 🧨 💥
-      notes: >
-        Second book of the Dungeon Crawler Carl series. This one kept up the momentum of the first
-        book, but also felt unique and fresh.
   "4":
     - title: Red Rising
       author: Pierce Brown
@@ -75,6 +66,15 @@ ranks:
       emojis: 🌖 🚀
       notes: >
         Second book of the Red Rising series. I listened to the dramatized adaptation.
+    - title: Carl's Doomsday Scenario
+      author: Matt Dinniman
+      image: /covers/carl-s-doomsday-scenario-matt-dinniman.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/11702962-L.jpg
+      goodreadsUrl: https://www.goodreads.com/book/show/56377548
+      emojis: 🧝‍♂️ 🧨 💥
+      notes: >
+        Second book of the Dungeon Crawler Carl series. This one kept up the momentum of the first
+        book, but also felt unique and fresh.
   "3.5":
     - title: The Strength of the Few
       author: James Islington
