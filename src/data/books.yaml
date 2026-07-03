@@ -47,6 +47,16 @@ ranks:
       notes: >
         First book of the Dungeon Crawler Carl series. I listened to the audiobook with my wife and we loved it!
         I was surprised that she got into it.
+    - title: Dark Age
+      author: Pierce Brown
+      image: /covers/dark-age-pierce-brown.jpg
+      sourceImage: https://covers.openlibrary.org/b/id/8748017-L.jpg
+      goodreadsUrl: https://www.goodreads.com/book/show/29226553
+      emojis: 🌊 🛸 🫯
+      notes: >
+        Fifth book of the Red Rising series. I listened to the dramatized adaptation. My favorite of the series so far!
+        Not only did this one have the multiple PoVs, but it had some cool transitions between them.  The story also
+        gave some tasty whiffs of Star Wars.
   "4":
     - title: Red Rising
       author: Pierce Brown
@@ -122,11 +132,6 @@ ranks:
   "0.5": null
 
 in_progress:
-  - title: Dark Age
-    author: Pierce Brown
-    image: /covers/dark-age-pierce-brown.jpg
-    sourceImage: https://covers.openlibrary.org/b/id/8748017-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/29226553
   - title: The Dungeon Anarchist's Cookbook
     author: Matt Dinniman
     image: /covers/the-dungeon-anarchist-s-cookbook-matt-dinniman.jpg
