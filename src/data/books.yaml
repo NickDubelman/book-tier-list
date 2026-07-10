@@ -114,6 +114,11 @@ ranks:
       emojis: 🟥 🟨
       notes: >
         Fourth book of the Red Rising series. I listened to the dramatized adaptation. Enjoyed the multiple PoVs.
+    - title: The Dungeon Anarchist's Cookbook
+      author: Matt Dinniman
+      image: /covers/the-dungeon-anarchist-s-cookbook-matt-dinniman.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL52237752M-L.jpg
+      goodreadsUrl: https://www.goodreads.com/book/show/57001971
   "3": null
   "2.5": null
   "2":
@@ -132,11 +137,6 @@ ranks:
   "0.5": null
 
 in_progress:
-  - title: The Dungeon Anarchist's Cookbook
-    author: Matt Dinniman
-    image: /covers/the-dungeon-anarchist-s-cookbook-matt-dinniman.jpg
-    sourceImage: https://covers.openlibrary.org/b/olid/OL52237752M-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/57001971
   - title: The Devil's Chessboard
     author: David Talbot
     image: /covers/the-devil-s-chessboard-david-talbot.jpg
@@ -189,3 +189,8 @@ want_to_read:
     image: /covers/the-magus-john-fowles.jpg
     sourceImage: https://covers.openlibrary.org/b/olid/OL7520522M-L.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/16286
+  - title: A Trade of Blood
+    author: Robert Jackson Bennett
+    image: /covers/a-trade-of-blood-robert-jackson-bennett.jpg
+    sourceImage: https://covers.openlibrary.org/b/isbn/9780593723852-L.jpg
+    goodreadsUrl: https://www.goodreads.com/book/show/102615935
