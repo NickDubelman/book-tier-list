@@ -3,7 +3,7 @@
 import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { parse, stringify } from "yaml";
+import { parseDocument } from "yaml";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(__dirname, "..");
@@ -48,6 +48,32 @@ function getExtFromUrl(url) {
   }
 }
 
+function collectBookEntries(doc) {
+  const entries = [];
+
+  const ranks = doc.get("ranks");
+  if (ranks && Array.isArray(ranks.items)) {
+    for (const pair of ranks.items) {
+      const rankKey = pair.key.value;
+      const seq = pair.value;
+      if (seq && Array.isArray(seq.items)) {
+        seq.items.forEach((node, index) => {
+          entries.push({ path: ["ranks", rankKey, index], book: node.toJSON() });
+        });
+      }
+    }
+  }
+
+  const wantToRead = doc.get("want_to_read");
+  if (wantToRead && Array.isArray(wantToRead.items)) {
+    wantToRead.items.forEach((node, index) => {
+      entries.push({ path: ["want_to_read", index], book: node.toJSON() });
+    });
+  }
+
+  return entries;
+}
+
 async function downloadToFile(url, destinationPath) {
   try {
     await access(destinationPath);
@@ -75,20 +101,15 @@ async function main() {
   await mkdir(coversDir, { recursive: true });
 
   const yamlText = await readFile(yamlPath, "utf8");
-  const data = parse(yamlText);
-
-  const rankBooks = Object.values(data?.ranks ?? {}).flatMap((entry) =>
-    Array.isArray(entry) ? entry : [],
-  );
-  const queueBooks = Array.isArray(data?.want_to_read) ? data.want_to_read : [];
-  const books = [...rankBooks, ...queueBooks];
+  const doc = parseDocument(yamlText);
+  const entries = collectBookEntries(doc);
 
   let downloaded = 0;
   let skipped = 0;
   let updated = 0;
 
-  for (let index = 0; index < books.length; index += 1) {
-    const book = books[index];
+  for (let index = 0; index < entries.length; index += 1) {
+    const { path: bookPath, book } = entries[index];
     const sourceImage = getSourceImage(book);
 
     if (!sourceImage) {
@@ -104,8 +125,8 @@ async function main() {
     const outFile = path.join(coversDir, filename);
 
     if (book.image !== localPath || book.sourceImage !== sourceImage) {
-      book.image = localPath;
-      book.sourceImage = sourceImage;
+      doc.setIn([...bookPath, "image"], localPath);
+      doc.setIn([...bookPath, "sourceImage"], sourceImage);
       updated += 1;
     }
 
@@ -123,7 +144,7 @@ async function main() {
     }
   }
 
-  await writeFile(yamlPath, stringify(data, { lineWidth: 0 }), "utf8");
+  await writeFile(yamlPath, String(doc), "utf8");
 
   console.log(`\nUpdated ${updated} book records.`);
   console.log(`Downloaded ${downloaded} cover files.`);
