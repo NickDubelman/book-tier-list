@@ -8,6 +8,14 @@ ranks:
       emojis: 🚀 👨‍🏫 🪨 👐
       notes: |
         Audiobook was the ideal format for this story. Perfect ending. Definitely glad I read it before getting any spoilers from the movie trailer.
+    - title: The Butcher's Masquerade
+      author: Matt Dinniman
+      image: /covers/the-butcher-s-masquerade-matt-dinniman.jpg
+      sourceImage: https://covers.openlibrary.org/b/olid/OL57519404M-L.jpg
+      goodreadsUrl: https://www.goodreads.com/book/show/60233239
+      emojis: 🐐 👺 🦖 🎤
+      notes: |
+        Fifth book of the Dungeon Crawler Carl series. My favorite of the series so far! A bunch of different plot lines that were all fun and interesting in different ways. From the very start it was all gas no brakes. Even the epilogue and end credits were amazing. As usual, we listened to the audiobook.
   "4.5":
     - title: The Tainted Cup
       author: Robert Jackson Bennett
@@ -149,11 +157,6 @@ want_to_read:
     image: /covers/the-martian-andy-weir.jpg
     sourceImage: https://covers.openlibrary.org/b/olid/OL32815550M-L.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/18007564
-  - title: The Butcher's Masquerade
-    author: Matt Dinniman
-    image: /covers/the-butcher-s-masquerade-matt-dinniman.jpg
-    sourceImage: https://covers.openlibrary.org/b/olid/OL57519404M-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/60233239
   - title: The Eye of the Bedlam Bride
     author: Matt Dinniman
     image: /covers/the-eye-of-the-bedlam-bride-matt-dinniman.jpg
