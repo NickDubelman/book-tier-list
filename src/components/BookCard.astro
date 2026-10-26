@@ -16,6 +16,7 @@ const { book, defaultEmojis } = Astro.props;
     aria-haspopup="dialog"
     aria-controls="book-modal"
     aria-label={`Show details for ${book.title} by ${book.author}`}
+    data-slug={book.slug}
     data-title={book.title}
     data-author={book.author}
     data-image={book.image}

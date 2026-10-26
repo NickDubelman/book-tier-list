@@ -6,6 +6,7 @@ export const RANKS = [5, 4.5, 4, 3.5, 3, 2.5, 2, 1.5, 1, 0.5] as const;
 export type Rank = (typeof RANKS)[number];
 
 export interface Book {
+  slug: string;
   title: string;
   author: string;
   image: string;
@@ -43,7 +44,7 @@ export const RANK_COLORS: Record<Rank, string> = {
   0.5: "#db3a34",
 };
 
-type RawBook = Partial<Book> & { notes?: unknown; emojis?: unknown; goodreadsUrl?: unknown };
+type RawBook = Partial<Omit<Book, "slug">> & { notes?: unknown; emojis?: unknown; goodreadsUrl?: unknown };
 type RawBooksFile = {
   ranks?: Record<string, RawBook[] | undefined>;
   in_progress?: RawBook[];
@@ -57,6 +58,16 @@ function assertObject(
   if (!value || typeof value !== "object" || Array.isArray(value)) {
     throw new Error(`Expected ${context} to be an object.`);
   }
+}
+
+export function slugify(text: string): string {
+  return text
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/['’]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 function parseBook(rawBook: RawBook, rowLabel: string, index: number): Book {
@@ -86,8 +97,11 @@ function parseBook(rawBook: RawBook, rowLabel: string, index: number): Book {
       ? rawBook.goodreadsUrl.trim()
       : undefined;
 
+  const title = rawBook.title!.trim();
+
   return {
-    title: rawBook.title!.trim(),
+    slug: slugify(title),
+    title,
     author: rawBook.author!.trim(),
     image: rawBook.image!.trim(),
     ...(notes !== undefined && { notes }),
@@ -159,5 +173,18 @@ export function getTierRows(): TierRow[] {
     ),
   };
 
-  return [...rankedRows, inProgressRow, wantToReadRow];
+  const rows = [...rankedRows, inProgressRow, wantToReadRow];
+
+  // Slugs are used in shareable URLs (?book=<slug>), so they must be unique
+  const seenSlugs = new Set<string>();
+  for (const book of rows.flatMap((row) => row.books)) {
+    if (seenSlugs.has(book.slug)) {
+      throw new Error(
+        `Duplicate book slug '${book.slug}' (from title '${book.title}') found in books.yaml.`,
+      );
+    }
+    seenSlugs.add(book.slug);
+  }
+
+  return rows;
 }
