@@ -140,6 +140,11 @@ ranks:
   "0.5": null
 
 in_progress:
+  - title: The Eye of the Bedlam Bride
+    author: Matt Dinniman
+    image: /covers/the-eye-of-the-bedlam-bride-matt-dinniman.jpg
+    sourceImage: https://covers.openlibrary.org/b/olid/OL57538307M-L.jpg
+    goodreadsUrl: https://www.goodreads.com/book/show/125887685
   - title: Light Bringer
     author: Pierce Brown
     image: /covers/light-bringer-pierce-brown.jpg
@@ -150,11 +155,6 @@ in_progress:
     image: /covers/the-devil-s-chessboard-david-talbot.jpg
     sourceImage: https://covers.openlibrary.org/b/olid/OL27443384M-L.jpg
     goodreadsUrl: https://www.goodreads.com/book/show/24723229
-  - title: The Eye of the Bedlam Bride
-    author: Matt Dinniman
-    image: /covers/the-eye-of-the-bedlam-bride-matt-dinniman.jpg
-    sourceImage: https://covers.openlibrary.org/b/olid/OL57538307M-L.jpg
-    goodreadsUrl: https://www.goodreads.com/book/show/125887685
 
 want_to_read:
   - title: The Martian
