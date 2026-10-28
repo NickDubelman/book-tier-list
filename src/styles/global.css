@@ -393,6 +393,11 @@ p {
     font-size: 1rem;
   }
 
+  .rank-value--named {
+    font-size: 0.62rem;
+    letter-spacing: 0.03em;
+  }
+
   .book-card {
     width: 60px;
   }
